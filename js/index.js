@@ -8,7 +8,7 @@ var svg = d3.select(map.getPanes().overlayPane).append("svg"),
     g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
 //load geojson
-d3.json("data/districts-geo.geojson", function(error, collection) {
+d3.json("data/districts-geo.json", function(error, collection) {
   if (error) throw error;
 
   //convert geojson to svg
@@ -19,6 +19,8 @@ d3.json("data/districts-geo.geojson", function(error, collection) {
   var feature = g.selectAll("path")
     .data(collection.features)
     .enter().append("path");
+
+    console.log(feature)
 
   //reset svg on map movement
   map.on("viewreset", reset);

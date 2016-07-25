@@ -9,6 +9,7 @@
 
 	 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"></script>
 	 <script src="https://d3js.org/d3.v3.min.js"></script>
+	 <!-- <script src="https://d3js.org/d3.geo.min.js"></script> -->
 
 </head>
 <body>
