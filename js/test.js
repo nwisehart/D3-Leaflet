@@ -1,35 +1,34 @@
-$(document).ready(function() {
-  console.log('ready');
-  var width = 900;
-  var height = 900;
+//init map to specific geo coordinates and zoom level
+var mymap = L.map('mapid').setView([47.45, -121.8], 9.4);
 
-  var projection = d3.geo.albersUsa().scale(2).translate([0,0]);
-  var path = d3.geo.path().projection(projection);
+//create light background map from mapshaper
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidXd3ZWJ0ZWFtIiwiYSI6ImNpcjNyM20zcjAwMTcxN25tOXIycTc1a3MifQ.wCpOJcC1QNSVgkWYhzDHWw', {
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    maxZoom: 18,
+}).addTo(mymap);
 
-  var vis = d3.select("#vis")
-    .append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-  d3.json("../data/districts-geo.json", function(json) {
-    console.log("loaded geojson");
-    var bounds = path.bounds(json);
-    var s = 0.95 / Math.max((bounds[1][0] - bounds[0][0]) / width, (bounds[1][1] - bounds[0][1]) / height);
-    var t = [(width - s * (bounds[1][0] + bounds[0][0])) / 2, (height - s * (bounds[1][1] + bounds[0][1])) / 2];
-
-    projection
-      .scale(s)
-      .translate(t);
-
-    vis.append("g")
-      .attr("class", "tracts")
-    .selectAll("path")
-      .data(json.features)
-      .enter().append("path")
-        .attr("d", path)
-        .attr("fill-opacity", 0.8)
-        .attr("stroke", "#222")
-        .attr("fill", "#85C3C0");
-
-  });
-});
+//add the geojson file
+var district_boundary = new L.geoJson();
+district_boundary.addTo(mymap);
+//district lines
+$.ajax({
+dataType: "json",
+url: "data/district84.geojson",
+success: function(data) {
+    $(data.features).each(function(key, data) {
+        district_boundary.addData(data);
+        console.log(data)
+    });
+}
+}).error(function() {});
+//school sites
+$.ajax({
+dataType: "json",
+url: "data/school84.geojson",
+success: function(data) {
+    $(data.features).each(function(key, data) {
+        district_boundary.addData(data);
+        console.log(data)
+    });
+}
+}).error(function() {});

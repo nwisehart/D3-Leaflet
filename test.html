@@ -1,44 +1,21 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
   <title>Map of City</title>
-  <meta name="description" content="Simple map of KC">
-  <meta name="author" content="Jim V">
+  
+  <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />  
+  <link rel="stylesheet" href="style.dev.css" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.0.6/modernizr.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.js"></script>
+  
 </head>
 
 <body>
 
-  <div class="container">
-    <div id="main" role="main">
-      <div id="vis"></div>
-    </div>
-  </div> 
+  <div id="mapid"></div>
 
-
-  <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-  <script>window.jQuery || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"><\/script>')</script>
-
-  <script src="https://d3js.org/d3.v3.min.js"></script>
-  <!-- COMMENT THIS OUT IF YOU WANT THE JS VERSION -->
-  <!-- <script src="js/libs/coffee-script.js"></script>
-  <script type="text/coffeescript" src="coffee/vis.coffee"></script> -->
-  <!-- UNCOMMENT THIS IF YOU WANT THE JS VERSION -->
-  <script src="js/test.js"></script>
-
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-  
 </body>
+<footer>
+    <script src="js/test.js"></script>
+</footer>
 </html>
