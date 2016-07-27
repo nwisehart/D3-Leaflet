@@ -1,3 +1,9 @@
 #mapid {
   height: 500px;
 }
+.leaflet-overlay-pane path {
+  fill: #000;
+  fill-opacity: 0.4;
+  stroke: #fff;
+  stroke-width: 2;
+}
