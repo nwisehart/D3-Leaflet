@@ -7,3 +7,6 @@
   stroke: #fff;
   stroke-width: 2;
 }
+.leaflet-overlay-pane path:hover {
+  fill-opacity: 0.8;
+}

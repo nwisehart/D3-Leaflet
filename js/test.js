@@ -13,7 +13,7 @@ district_boundary.addTo(mymap);
 //district lines
 $.ajax({
 dataType: "json",
-url: "data/district84.geojson",
+url: "data/demodistrict.geojson",
 success: function(data) {
     $(data.features).each(function(key, data) {
         district_boundary.addData(data);
@@ -27,11 +27,14 @@ var school_sites = new L.geoJson();
 //school_sites.addTo(mymap);
 $.ajax({
 dataType: "json",
-url: "data/school84.geojson",
+url: "data/demoschool.geojson",
 success: function(data) {
     $(data.features).each(function(key, data) {
-        school_sites.addData(data);
-        console.log(data)
+        if(data.geometry.coordinates[0] !== 0) {
+            school_sites.addData(data);
+        }
+        console.log("school")
+        console.log(data.geometry.coordinates[0])
     });
 }
 }).error(function() {});
