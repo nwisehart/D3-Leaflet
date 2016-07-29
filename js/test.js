@@ -16,8 +16,11 @@ dataType: "json",
 url: "data/demodistrict.geojson",
 success: function(data) {
     $(data.features).each(function(key, data) {
-        district_boundary.addData(data);
-        console.log(data)
+        if(data.properties.districtdemo_freeredlunch){
+            district_boundary.addData(data);
+            district_boundary.setStyle(style);
+        }
+        //console.log(data)
     });
 }
 }).error(function() {});
@@ -33,8 +36,7 @@ success: function(data) {
         if(data.geometry.coordinates[0] !== 0) {
             school_sites.addData(data);
         }
-        console.log("school")
-        console.log(data.geometry.coordinates[0])
+        //console.log(data.geometry.coordinates[0])
     });
 }
 }).error(function() {});
@@ -47,6 +49,7 @@ mymap.on('zoomend', function (e) {
         case 14:
         case 13:
         case 12:
+        case 11:
          school_sites.addTo(mymap);
         break;
         default:
@@ -54,3 +57,12 @@ mymap.on('zoomend', function (e) {
         break;
     }
 });
+
+//color for cloropleth
+var getColor = chroma.scale(['#00FF00', '#FFFF00', '#FF0000']).domain([0, 25, 100]); 
+function style(feature) {
+    console.log(feature);
+    return {
+        fillColor: getColor(feature.properties.districtdemo_freeredlunch)
+    };
+}
