@@ -36,8 +36,9 @@ url: "data/demoschool.geojson",
 success: function(e) {
     school_sites = L.geoJson(e, {
         filter: filterSchool,
-        onEachFeature: onEachSchool
+        onEachFeature: onEachSchool,
         //style: styleSchool
+        pointToLayer: schoolPoints
     });
 }
 }).error(function() {});
@@ -58,6 +59,18 @@ mymap.on('zoomend', function (e) {
         break;
     }
 });
+
+//make new icon
+function schoolPoints(feature, latlng) {
+    var icon = new L.Icon({ 
+                        iconSize: [25, 41],
+                        iconAnchor: [12.5, 41],
+                        popupAnchor:  [1, -41],
+                        iconUrl: 'assets/marker-icon.png'
+                    });
+    return L.marker(latlng, {icon: icon});
+
+}
 
 //color for cloropleth
 function getColor(e) {
