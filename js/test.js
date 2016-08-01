@@ -12,7 +12,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/
 //add district lines to map from geojson file
 $.ajax({
 dataType: "json",
-url: "data/demodistrict.geojson",
+url: "data/districts.geojson",
 success: function(e) {
     L.geoJson(e, {
         filter: filterDistrict,
@@ -32,7 +32,7 @@ legend.addTo(mymap);
 //add school sites to map from cloropleth
 $.ajax({
 dataType: "json",
-url: "data/demoschool.geojson",
+url: "data/schools.geojson",
 success: function(e) {
     school_sites = L.geoJson(e, {
         filter: filterSchool,
@@ -81,13 +81,13 @@ function getColor(e) {
 //add color of cloropleth to districts
 function styleDistrict(feature) {
     return {
-        fillColor: getColor(feature.properties.districtdemo_freeredlunch)
+        fillColor: getColor(feature.properties.freeredlunch)
     };
 }
 
 //filter districts on whether they have info
 function filterDistrict(feature, layer) {
-    return feature.properties.districtdemo_freeredlunch;
+    return feature.properties.freeredlunch;
 }
 
 //filter school on whether they have coordinates
@@ -108,15 +108,15 @@ function onEachSchool(feature, layer) {
 //district pop up box
 function getDistrictPopup(data) {
     graphHeight = 80;
-    asian = Math.round(parseInt(data.properties.districtdemo_PercentAsian) + parseInt(data.properties.districtdemo_PercentAsianPacificIslander));
-    hispanic = Math.round(data.properties.districtdemo_PercentHispanic);
-    white = Math.round(data.properties.districtdemo_PercentWhite);
-    african = Math.round(data.properties.districtdemo_PercentBlack);
+    asian = Math.round(parseInt(data.properties.PercentAsian) + parseInt(data.properties.PercentAsianPacificIslander));
+    hispanic = Math.round(data.properties.PercentHispanic);
+    white = Math.round(data.properties.PercentWhite);
+    african = Math.round(data.properties.PercentBlack);
     return "<div class='popupbox'><table width='200px'>" + 
                 "<tr class='district-name row'><td colspan='4'>" + data.properties.NAME + "</td></tr>" +
-                "<tr class='lunch data row'><td class='percent'>" + Math.round(data.properties.districtdemo_freeredlunch) + "%" + "</td><td colspan='3' class='label'>% Free / reduced lunch</td></tr>" +
-                "<tr class='grad data row'><td class='percent'>" + Math.round(data.properties.districtdemo_GradRate) + "%" + "</td><td colspan='3' class='label'>Graduation rate</td></tr>" +
-                "<tr class='esl data row'><td class='percent'>" + Math.round(data.properties.districtdemo_ESL) + "%" + "</td><td colspan='3' class='label'>% ESL</td></tr>" +
+                "<tr class='lunch data row'><td class='percent'>" + Math.round(data.properties.freeredlunch) + "%" + "</td><td colspan='3' class='label'>% Free / reduced lunch</td></tr>" +
+                "<tr class='grad data row'><td class='percent'>" + Math.round(data.properties.GradRate) + "%" + "</td><td colspan='3' class='label'>Graduation rate</td></tr>" +
+                "<tr class='esl data row'><td class='percent'>" + Math.round(data.properties.ESL) + "%" + "</td><td colspan='3' class='label'>% ESL</td></tr>" +
                 "<tr class='graph row'>" + 
                     "<td rowspan='5' class='asian'>" +  
                         "<div class='bar' style='height:" + (asian/100 * graphHeight) + "px;'><p>" + asian + "%</p></div>" +
@@ -146,12 +146,11 @@ function getSchoolPopup(data) {
     white = Math.round(data.properties.PercentWhite);
     african = Math.round(data.properties.PercentBlack);
     UWCand = data.properties.UWPrincipals + data.properties.UWSI + data.properties.UWTeachers;
-    //console.log(data);
     popup = "<div class='popupbox'><table width='200px'>" + 
                 "<tr class='district-name row'><td colspan='4'>" + data.properties.School + "</td></tr>" +
                 "<tr class='lunch data row'><td class='percent'>" + Math.round(data.properties.PercentFreeorReducedPricedMeals) + "%" + "</td><td colspan='3' class='label'>% Free / reduced lunch</td></tr>";
     popup += (data.properties.GraduationRate === 0) ? "" : "<tr class='grad data row'><td class='percent'>" + Math.round(data.properties.GraduationRate) + "%" + "</td><td colspan='3' class='label'>Graduation rate</td></tr>";
-                //"<tr class='esl data row'><td class='percent'>" + Math.round(data.properties.ESL) + "%" + "</td><td colspan='3' class='label'>% ESL</td></tr>" +
+    popup +=    "<tr class='esl data row'><td class='percent'>" + Math.round(data.properties.PercentESL) + "%" + "</td><td colspan='3' class='label'>% ESL</td></tr>";
     popup += (UWCand === 0) ? "" : "<tr class='grad data row'><td class='percent'>" + UWCand + "</td><td colspan='3' class='label'>UW leadership candidates</td></tr>";
     popup +=    "<tr class='graph row'>" + 
                     "<td rowspan='5' class='asian'>" +  
