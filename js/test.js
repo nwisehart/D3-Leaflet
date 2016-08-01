@@ -81,7 +81,7 @@ function getColor(e) {
 //add color of cloropleth to districts
 function styleDistrict(feature) {
     return {
-        fillColor: getColor(feature.properties.freeredlunch)
+        fillColor: "#FFFFFF" //getColor(feature.properties.freeredlunch)
     };
 }
 
