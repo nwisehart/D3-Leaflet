@@ -118,21 +118,21 @@ function getDistrictPopup(data) {
                 "<tr class='grad data row'><td class='percent'>" + Math.round(data.properties.GradRate) + "%" + "</td><td colspan='3' class='label'>Graduation rate</td></tr>" +
                 "<tr class='esl data row'><td class='percent'>" + Math.round(data.properties.ESL) + "%" + "</td><td colspan='3' class='label'>% ESL</td></tr>" +
                 "<tr class='graph row'>" + 
-                    "<td rowspan='5' class='asian'>" +  
+                    "<td rowspan='5' class='asian'>" + "<div class='containerGraph'>" +
                         "<div class='bar' style='height:" + (asian/100 * graphHeight) + "px;'><p>" + asian + "%</p></div>" +
-                        "<p class='tag'>asian</p>" +
+                        "<p class='tag'>asian</p>" + "</div>" +
                     "</td>" +
-                    "<td rowspan='5' class='hispanic'>" +  
+                    "<td rowspan='5' class='hispanic'>" + "<div class='containerGraph'>" +
                         "<div class='bar' style='height:" + (hispanic/100 * graphHeight) + "px;'><p>" + hispanic + "%</p></div>" +
-                        "<p class='tag'>hispanic</p>" +
+                        "<p class='tag'>hispanic</p>" + "</div>" +
                     "</td>" +
-                    "<td rowspan='5' class='white'>" +  
+                    "<td rowspan='5' class='white'>" + "<div class='containerGraph'>" +
                         "<div class='bar' style='height:" + (white/100 * graphHeight) + "px;'><p>" + white + "%</p></div>" +
-                        "<p class='tag'>white</p>" +
+                        "<p class='tag'>white</p>" + "</div>" +
                     "</td>" +
-                    "<td rowspan='5' class='african'>" +  
+                    "<td rowspan='5' class='african'>" + "<div class='containerGraph'>" +
                         "<div class='bar' style='height:" + (african/100 * graphHeight) + "px;'><p>" + african + "%</p></div>" +
-                        "<p class='tag'>african</p>" +
+                        "<p class='tag'>african</p>" + "</div>" +
                     "</td>" +
                 "</tr>" +
                 "</table></div>";
@@ -153,21 +153,21 @@ function getSchoolPopup(data) {
     popup +=    "<tr class='esl data row'><td class='percent'>" + Math.round(data.properties.PercentESL) + "%" + "</td><td colspan='3' class='label'>% ESL</td></tr>";
     popup += (UWCand === 0) ? "" : "<tr class='cand data row'><td class='percent'>" + UWCand + "</td><td colspan='3' class='label'>UW leadership candidates</td></tr>";
     popup +=    "<tr class='graph row'>" + 
-                    "<td rowspan='5' class='asian'>" +  
+                    "<td rowspan='5' class='asian'>" + "<div class='containerGraph'>" +
                         "<div class='bar' style='height:" + (asian/100 * graphHeight) + "px;'><p>" + asian + "%</p></div>" +
-                        "<p class='tag'>asian</p>" +
+                        "<p class='tag'>asian</p>" + "</div>" +
                     "</td>" +
-                    "<td rowspan='5' class='hispanic'>" +  
+                    "<td rowspan='5' class='hispanic'>" + "<div class='containerGraph'>" +
                         "<div class='bar' style='height:" + (hispanic/100 * graphHeight) + "px;'><p>" + hispanic + "%</p></div>" +
-                        "<p class='tag'>hispanic</p>" +
+                        "<p class='tag'>hispanic</p>" + "</div>" +
                     "</td>" +
-                    "<td rowspan='5' class='white'>" +  
+                    "<td rowspan='5' class='white'>" + "<div class='containerGraph'>" + 
                         "<div class='bar' style='height:" + (white/100 * graphHeight) + "px;'><p>" + white + "%</p></div>" +
-                        "<p class='tag'>white</p>" +
+                        "<p class='tag'>white</p>" + "</div>" +
                     "</td>" +
-                    "<td rowspan='5' class='african'>" +  
+                    "<td rowspan='5' class='african'>" + "<div class='containerGraph'>'" +  
                         "<div class='bar' style='height:" + (african/100 * graphHeight) + "px;'><p>" + african + "%</p></div>" +
-                        "<p class='tag'>african</p>" +
+                        "<p class='tag'>african</p>" + "</div>" +
                     "</td>" +
                 "</tr>" +
                 "</table></div>";

@@ -78,41 +78,45 @@ div.popupbox table{
 			td {
 				position: relative;
 				width: 25%;
-				div.bar {
-				    width: 25px;
-				    left: 0;
-    				right: 0;
-				    margin-right: auto;
-				    margin-left: auto;
-			        position: absolute;
-			        bottom: 15px;
-					p{
-						margin-top: -15px; 
+				vertical-align: bottom;
+				div.containerGraph {
+					position: relative;
+					div.bar {
+					    width: 25px;
+					    left: 0;
+	    				right: 0;
+					    margin-right: auto;
+					    margin-left: auto;
+				        position: absolute;
+				        bottom: 15px;
+						p{
+							margin-top: -15px; 
+							text-align: center;
+						}
+					}
+					p.tag {
+						//position: absolute;
+						//bottom: -1px;
 						text-align: center;
+						text-transform: uppercase;
+						font-size: 10px;
+						//right: 0;
+					    //left: 0;
+						margin: 0;
+						border-bottom: 1px solid #CCC;
+						border-top: 1px solid #CCC;
 					}
 				}
-				p.tag {
-					position: absolute;
-					bottom: -1px;
-					text-align: center;
-					text-transform: uppercase;
-					font-size: 10px;
-					right: 0;
-				    left: 0;
-					margin: 0;
-					border-bottom: 1px solid #CCC;
-					border-top: 1px solid #CCC;
-				}
-				&.asian div.bar {
+				&.asian div.containerGraph div.bar {
 					background-color: #b7a57a;
 				}
-				&.hispanic div.bar {
+				&.hispanic div.containerGraph div.bar {
 					background-color: #ae9c6b;
 				}
-				&.white div.bar {
+				&.white div.containerGraph div.bar {
 					background-color: #a68f59;
 				}
-				&.african div.bar {
+				&.african div.containerGraph div.bar {
 					background-color: #958150;
 				}
 			}
