@@ -29,12 +29,66 @@
 .legend i p.hundred {
   margin-left: 0;
 }
-div.popupbox tr {
-  border: 1;
+div.popupbox table {
+  border-collapse: collapse;
+  border-style: hidden;
 }
-div.popupbox tr.district-name {
-  text-decoration: uppercase;
+div.popupbox table tr.row.district-name {
+  text-transform: uppercase;
+  text-align: center;
 }
-div.popupbox tr td.percent {
-  border-right: 2px solid black;
+div.popupbox table tr.row td.label {
+  width: 100%;
+  padding-left: 5px;
+}
+div.popupbox table tr.row td.percent,
+div.popupbox table tr.row td.label {
+  border: 1px solid #CCC;
+}
+div.popupbox table tr.row td.percent {
+  text-align: center;
+}
+div.popupbox table tr.row.graph {
+  height: 100px;
+}
+div.popupbox table tr.row.graph td {
+  position: relative;
+  width: 25%;
+}
+div.popupbox table tr.row.graph td div.bar {
+  width: 25px;
+  left: 0;
+  right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  bottom: 15px;
+  position: absolute;
+}
+div.popupbox table tr.row.graph td div.bar p {
+  margin-top: -15px;
+  text-align: center;
+}
+div.popupbox table tr.row.graph td p.tag {
+  bottom: -1px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 10px;
+  right: 0;
+  left: 0;
+  margin: 0;
+  border-bottom: 1px solid #CCC;
+  border-top: 1px solid #CCC;
+}
+div.popupbox table tr.row.graph td.asian div.bar {
+  background-color: #b7a57a;
+}
+div.popupbox table tr.row.graph td.hispanic div.bar {
+  background-color: #ae9c6b;
+}
+div.popupbox table tr.row.graph td.white div.bar {
+  background-color: #a68f59;
+}
+div.popupbox table tr.row.graph td.african div.bar {
+  background-color: #958150;
 }
