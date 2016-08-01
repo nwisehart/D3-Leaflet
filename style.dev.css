@@ -79,16 +79,16 @@ div.popupbox table tr.row.graph td div.bar {
   right: 0;
   margin-right: auto;
   margin-left: auto;
-  bottom: 15px;
   position: absolute;
+  bottom: 15px;
 }
 div.popupbox table tr.row.graph td div.bar p {
   margin-top: -15px;
   text-align: center;
 }
 div.popupbox table tr.row.graph td p.tag {
-  bottom: -1px;
   position: absolute;
+  bottom: -1px;
   text-align: center;
   text-transform: uppercase;
   font-size: 10px;
