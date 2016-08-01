@@ -63,9 +63,9 @@ mymap.on('zoomend', function (e) {
 //make new icon
 function schoolPoints(feature, latlng) {
     var icon = new L.Icon({ 
-                        iconSize: [25, 41],
-                        iconAnchor: [12.5, 41],
-                        popupAnchor:  [1, -41],
+                        iconSize: [40, 40],
+                        iconAnchor: [20, 40],
+                        popupAnchor:  [0, -40],
                         iconUrl: 'assets/marker-icon.png'
                     });
     return L.marker(latlng, {icon: icon});

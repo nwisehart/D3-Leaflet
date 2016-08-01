@@ -8,9 +8,8 @@ change pop-up box shape?
 add label svgs
 format box text weights
 search/checkbox thing
+add help icon? 
 
 
-To do at work - average data from skykomish schools and add to district data
-				add ESL% for schools
-				change icon color with photoshop
+To do at work - change icon color with photoshop
 				Review with Kilian 
