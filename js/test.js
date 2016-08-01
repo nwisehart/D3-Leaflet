@@ -151,7 +151,7 @@ function getSchoolPopup(data) {
                 "<tr class='lunch data row'><td class='percent'>" + Math.round(data.properties.PercentFreeorReducedPricedMeals) + "%" + "</td><td colspan='3' class='label'>% Free / reduced lunch</td></tr>";
     popup += (data.properties.GraduationRate === 0) ? "" : "<tr class='grad data row'><td class='percent'>" + Math.round(data.properties.GraduationRate) + "%" + "</td><td colspan='3' class='label'>Graduation rate</td></tr>";
     popup +=    "<tr class='esl data row'><td class='percent'>" + Math.round(data.properties.PercentESL) + "%" + "</td><td colspan='3' class='label'>% ESL</td></tr>";
-    popup += (UWCand === 0) ? "" : "<tr class='grad data row'><td class='percent'>" + UWCand + "</td><td colspan='3' class='label'>UW leadership candidates</td></tr>";
+    popup += (UWCand === 0) ? "" : "<tr class='cand data row'><td class='percent'>" + UWCand + "</td><td colspan='3' class='label'>UW leadership candidates</td></tr>";
     popup +=    "<tr class='graph row'>" + 
                     "<td rowspan='5' class='asian'>" +  
                         "<div class='bar' style='height:" + (asian/100 * graphHeight) + "px;'><p>" + asian + "%</p></div>" +
@@ -188,7 +188,7 @@ function legendAdd(map) {
             + ((i === 0) ? '<p>0</p>' : '')  
             + ((i === 10) ? '<p class="hundred">100</p>' : '')  + '</i> ';
     }
-    div.innerHTML += '<br/>' + 'FREE / REDUCED LUNCH';
+    div.innerHTML += '<br/>' + '<p class="lunchLabel">FREE / REDUCED LUNCH</p>';
 
     return div;
 }

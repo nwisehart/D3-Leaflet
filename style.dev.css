@@ -29,6 +29,24 @@
 .legend i p.hundred {
   margin-left: 0;
 }
+.legend p.lunchLabel {
+  margin: 0;
+}
+.legend p.lunchLabel:after,
+.legend p.lunchLabel:before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 9px;
+}
+.legend p.lunchLabel:before {
+  background: url(assets/icons.svg) no-repeat -122px -4px transparent;
+  left: 0;
+}
+.legend p.lunchLabel:after {
+  background: url(assets/icons.svg) no-repeat -139px -4px transparent;
+  right: 0;
+}
 div.popupbox table {
   border-collapse: collapse;
   border-style: hidden;
@@ -91,4 +109,27 @@ div.popupbox table tr.row.graph td.white div.bar {
 }
 div.popupbox table tr.row.graph td.african div.bar {
   background-color: #958150;
+}
+div.popupbox table tr.row.data td.label {
+  padding-left: 20px;
+}
+div.popupbox table tr.row.data td.label:after,
+div.popupbox table tr.row.data td.label:before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 18px;
+  margin-left: -18px;
+}
+div.popupbox table tr.row.data.lunch td.label:before {
+  background: url(assets/icons.svg) no-repeat -73px transparent;
+}
+div.popupbox table tr.row.data.grad td.label:before {
+  background: url(assets/icons.svg) no-repeat -24px transparent;
+}
+div.popupbox table tr.row.data.esl td.label:before {
+  background: url(assets/icons.svg) no-repeat -42px transparent;
+}
+div.popupbox table tr.row.data.cand td.label:before {
+  background: url(assets/icons.svg) no-repeat -106px transparent;
 }

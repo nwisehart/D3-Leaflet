@@ -30,6 +30,24 @@
 		    }
 	    }
 	    
+	}
+	p.lunchLabel {
+		margin: 0;
+		&:after,
+		&:before {
+		    content: "";
+		    position: absolute;
+		    width: 18px;
+		    height: 9px;
+		}
+		&:before {
+		    background: url(assets/icons.svg) no-repeat -122px -4px transparent;
+		    left: 0;
+		}
+		&:after {
+			background: url(assets/icons.svg) no-repeat -139px -4px transparent;
+			right: 0;
+		}
 	}	
 }
 
@@ -98,6 +116,40 @@ div.popupbox table{
 					background-color: #958150;
 				}
 			}
+		}
+		&.data {
+			td.label{
+				padding-left: 20px;
+				&:after,
+				&:before {
+				    content: "";
+				    position: absolute;
+				    width: 14px;
+				    height: 18px;
+				    margin-left: -18px;
+				}
+			}
+
+			&.lunch td.label:before {
+				background: url(assets/icons.svg) no-repeat -73px transparent;
+			}
+			&.grad td.label:before {
+				background: url(assets/icons.svg) no-repeat -24px transparent;
+			}
+			&.esl td.label:before {
+				background: url(assets/icons.svg) no-repeat -42px transparent;
+			}
+			&.cand td.label:before {
+				background: url(assets/icons.svg) no-repeat -106px transparent;
+			}
+			//svg locations
+			//graph = -5
+			//diploma = -24
+			//message = -42
+			//shirt = -59
+			//apple = -73
+			//grad cap = -90
+			//flag = -106
 		}
 	}
 }
