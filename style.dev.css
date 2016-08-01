@@ -73,6 +73,7 @@ div.popupbox table tr.row.graph td {
   position: relative;
   width: 25%;
   vertical-align: bottom;
+  padding: 0;
 }
 div.popupbox table tr.row.graph td div.containerGraph {
   position: relative;
