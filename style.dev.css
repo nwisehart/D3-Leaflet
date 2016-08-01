@@ -72,42 +72,42 @@ div.popupbox table tr.row.graph {
 div.popupbox table tr.row.graph td {
   position: relative;
   width: 25%;
+  vertical-align: bottom;
 }
-div.popupbox table tr.row.graph td div.bar {
+div.popupbox table tr.row.graph td div.containerGraph {
+  position: relative;
+}
+div.popupbox table tr.row.graph td div.containerGraph div.bar {
   width: 25px;
   left: 0;
   right: 0;
   margin-right: auto;
   margin-left: auto;
-  bottom: 15px;
   position: absolute;
+  bottom: 15px;
 }
-div.popupbox table tr.row.graph td div.bar p {
+div.popupbox table tr.row.graph td div.containerGraph div.bar p {
   margin-top: -15px;
   text-align: center;
 }
-div.popupbox table tr.row.graph td p.tag {
-  bottom: -1px;
-  position: absolute;
+div.popupbox table tr.row.graph td div.containerGraph p.tag {
   text-align: center;
   text-transform: uppercase;
   font-size: 10px;
-  right: 0;
-  left: 0;
   margin: 0;
   border-bottom: 1px solid #CCC;
   border-top: 1px solid #CCC;
 }
-div.popupbox table tr.row.graph td.asian div.bar {
+div.popupbox table tr.row.graph td.asian div.containerGraph div.bar {
   background-color: #b7a57a;
 }
-div.popupbox table tr.row.graph td.hispanic div.bar {
+div.popupbox table tr.row.graph td.hispanic div.containerGraph div.bar {
   background-color: #ae9c6b;
 }
-div.popupbox table tr.row.graph td.white div.bar {
+div.popupbox table tr.row.graph td.white div.containerGraph div.bar {
   background-color: #a68f59;
 }
-div.popupbox table tr.row.graph td.african div.bar {
+div.popupbox table tr.row.graph td.african div.containerGraph div.bar {
   background-color: #958150;
 }
 div.popupbox table tr.row.data td.label {
