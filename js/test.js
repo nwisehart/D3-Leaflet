@@ -75,7 +75,7 @@ function schoolPoints(feature, latlng) {
 //color for cloropleth
 function getColor(e) {
     var colored = chroma.scale(['#00FF00', '#FFFF00', '#FF0000']).domain([0, 25, 100]);
-    return colored(e);
+    return colored(e).hex();
 } 
 
 //add color of cloropleth to districts
