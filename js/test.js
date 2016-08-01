@@ -146,7 +146,7 @@ function getSchoolPopup(data) {
     white = Math.round(data.properties.PercentWhite);
     african = Math.round(data.properties.PercentBlack);
     UWCand = data.properties.UWPrincipals + data.properties.UWSI + data.properties.UWTeachers;
-    popup = "<div class='popupbox'><table width='200px'>" + 
+    popup = "<div class='popupbox'><table width='220px'>" + 
                 "<tr class='district-name row'><td colspan='4'>" + data.properties.School + "</td></tr>" +
                 "<tr class='lunch data row'><td class='percent'>" + Math.round(data.properties.PercentFreeorReducedPricedMeals) + "%" + "</td><td colspan='3' class='label'>% Free / reduced lunch</td></tr>";
     popup += (data.properties.GraduationRate === 0) ? "" : "<tr class='grad data row'><td class='percent'>" + Math.round(data.properties.GraduationRate) + "%" + "</td><td colspan='3' class='label'>Graduation rate</td></tr>";
